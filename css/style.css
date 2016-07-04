@@ -59,7 +59,7 @@ body{
 .content{
 	color: #404040;
 	margin-top: 20px;
-	
+	border: 1px solid #999;
 }
 .menubar{
 	margin-top: 20px;
