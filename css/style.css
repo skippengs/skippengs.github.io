@@ -56,6 +56,14 @@ body{
 .headerbg{
 	background: #2196F3;
 }
+.header h1{
+	color: #fff;
+	font-size: 30px;
+}
+.header .subtitle{
+	font-size: 16px;
+	color: #fff;
+}
 .content{
 	color: #404040;
 	margin-top: 20px;
