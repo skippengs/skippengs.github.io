@@ -15,3 +15,6 @@ li span{
 	color: red;
 	font-size: 20px;
 }
+li span:hover{
+	background: blue;
+}
