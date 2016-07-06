@@ -53,11 +53,12 @@ body{
 	font-family: Roboto;
 }
 
+
 .headerbg{
 	background: #2196F3;
 }
 .header{
-	margin: 10px 0;
+	margin: 20px 0;
 }
 .header h1{
 	color: #fff;
@@ -69,9 +70,6 @@ body{
 }
 .content{
 	color: #404040;
-	margin-top: 20px;
-}
-.menubar{
 	margin-top: 20px;
 }
 .fabbtn{
