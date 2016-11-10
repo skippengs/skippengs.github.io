@@ -9,7 +9,32 @@
 <body>
 	<div class="phone">
 		<div class="alphalist">
-			a b c d e f g h i j k l m n o p q r s t u v w y z
+			<span>a</span>
+			<span>b</span>
+			<span>c</span>
+			<span>d</span>
+			<span>e</span>
+			<span>f</span>
+			<span>g</span>
+			<span>h</span>
+			<span>i</span>
+			<span>j</span>
+			<span>k</span>
+			<span>l</span>
+			<span>m</span>
+			<span>n</span>
+			<span>o</span>
+			<span>p</span>
+			<span>q</span>
+			<span>r</span>
+			<span>s</span>
+			<span>t</span>
+			<span>u</span>
+			<span>v</span>
+			<span>w</span>
+			<span>x</span>
+			<span>y</span>
+			<span>z</span>
 		</div>
 		<div class="header">
 			<h1>Contacts</h1>
@@ -56,5 +81,32 @@
 			</ul>
 		</div>
 	</div>
+	<div id="log"></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.map" type="text/javascript"></script>
+	
+	<script>
+				
+		// A $( document ).ready() block.
+		$( document ).ready(function() {
+			$( ".content" ).scroll(function() {
+				
+				var headerHeight = $('.header').height() - 1;
+				var contentMarginT = $('.content').css('margin-top').replace("px","") - 1;
+				if(headerHeight <= 80){
+					headerHeight = 80+'px';
+					contentMarginT = 100;
+				}else{
+					headerHeight = headerHeight+'px';
+				}
+				$('.header').css('height',headerHeight);
+				$(".content").css('margin-top', contentMarginT+'px');
+				$( "#log" ).html( "<div>headerheight "+headerHeight+"<br>content margin"+contentMarginT+"</div>" );
+			});
+		});
+
+	</script>
+	
+	
 </body>
 </html>
