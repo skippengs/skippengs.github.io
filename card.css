@@ -24,13 +24,18 @@ body{
 .header {
 	background: #3F51B5;
 	height: 150px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
 }
 .header h1{
 	margin-left: 15px;
 	color: #fff;
 }
-.results{
-	margin-top: ;
+.content{
+	margin-top: 170px;
+	overflow-y: scroll;
 }
 .contacts{
 	padding: 15px;
@@ -38,6 +43,9 @@ body{
 }
 .contacts li{
 	position: relative;
+}
+.contacts li.contact{
+	padding: 10px 0;
 }
 .contacts li.contact .name{
 	display: block;
