@@ -83,6 +83,7 @@
 		</div>
 	</div>
 	<div id="log"></div>
+	<div id="log2"><span class="oldscroll" style="color:red;"></span><span class="newscroll"></span></div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.map" type="text/javascript"></script>
 	
@@ -90,25 +91,46 @@
 				
 		// A $( document ).ready() block.
 		$( document ).ready(function() {
+		var oldContentScroll = 0;
 			$( ".content" ).scroll(function() {
-				var contentScroll = $('.content').scrollTop();
-				if(oldContentScroll < contentScroll){
-					scrollLog = 'omhoog';
+				var contentScroll = $(this).scrollTop();
+				if(contentScroll < oldContentScroll){
+					scrollDir = 'up';
 				}else{
-					scrollLog = 'omlaag';
+					scrollDir = 'down';
 				}
-				var oldContentScroll = contentScroll;
-				var headerHeight = $('.header').height() - 2;
-				var contentMarginT = $('.content').css('margin-top').replace("px","") - 2;
+				//log scroll pos
+				$('#log2 .oldscroll').html(oldContentScroll);
+				$('#log2 .newscroll').html(contentScroll);
+				oldContentScroll = contentScroll;
+				
+				var headerHeight = $('.header').height();
+				var contentMarginT = $('.content').css('margin-top').replace("px","");
+				if (scrollDir == "up") {
+					headerHeight = headerHeight + 3;
+					contentMarginT = contentMarginT + 3;
+				}else {
+					headerHeight = headerHeight - 3;
+					contentMarginT = contentMarginT - 3;
+				}
+				//-3
+				//
 				if(headerHeight <= 80){
 					headerHeight = 80+'px';
 					contentMarginT = 100;
-				}else{
+				}else if (headerHeight >= 150) {
+					headerHeight = 150+'px';
+					contentMarginT = 170;
+				}{
 					headerHeight = headerHeight+'px';
 				}
 				$('.header').css('height',headerHeight);
 				$(".content").css('margin-top', contentMarginT+'px');
-				$( "#log" ).html( "<div>headerheight "+headerHeight+"<br>content margin"+contentMarginT+"<br>scrollpos "+contentScroll+" - "+oldContentScroll+"<br>richting "+scrollLog+"</div>" );
+				$( "#log" ).html( "<div>headerheight "+headerHeight+"<br>content margin"+contentMarginT+"<br>richting "+scrollDir+"</div>" );
+				
+				
+				
+				
 			});
 		});
 
