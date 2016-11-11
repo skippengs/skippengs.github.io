@@ -79,6 +79,46 @@
 					<span class="name">Marinke van Aarsen</span>
 					<span class="sub">extra info here</span>
 				</li>
+				<li class="contact">
+					<span class="name">Marinke van Aarsen</span>
+					<span class="sub">extra info here</span>
+				</li>
+				<li class="contact">
+					<span class="name">Marinke van Aarsen</span>
+					<span class="sub">extra info here</span>
+				</li>
+				<li class="contact">
+					<span class="name">Marinke van Aarsen</span>
+					<span class="sub">extra info here</span>
+				</li>
+				<li class="contact">
+					<span class="name">Marinke van Aarsen</span>
+					<span class="sub">extra info here</span>
+				</li>
+				<li class="contact">
+					<span class="name">Marinke van Aarsen</span>
+					<span class="sub">extra info here</span>
+				</li>
+				<li class="contact">
+					<span class="name">Marinke van Aarsen</span>
+					<span class="sub">extra info here</span>
+				</li>
+				<li class="contact">
+					<span class="name">Marinke van Aarsen</span>
+					<span class="sub">extra info here</span>
+				</li>
+				<li class="contact">
+					<span class="name">Marinke van Aarsen</span>
+					<span class="sub">extra info here</span>
+				</li>
+				<li class="contact">
+					<span class="name">Marinke van Aarsen</span>
+					<span class="sub">extra info here</span>
+				</li>
+				<li class="contact">
+					<span class="name">Marinke van Aarsen</span>
+					<span class="sub">extra info here</span>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -108,29 +148,25 @@
 				var contentMarginT = $('.content').css('margin-top').replace("px","");
 				if (scrollDir == "up") {
 					headerHeight = headerHeight + 3;
-					contentMarginT = contentMarginT + 3;
+					contentMarginT = +contentMarginT + 3;
 				}else {
 					headerHeight = headerHeight - 3;
-					contentMarginT = contentMarginT - 3;
+					contentMarginT = +contentMarginT - 3;
 				}
 				//-3
 				//
 				if(headerHeight <= 80){
-					headerHeight = 80+'px';
+					headerHeight = 80;
 					contentMarginT = 100;
 				}else if (headerHeight >= 150) {
-					headerHeight = 150+'px';
+					headerHeight = 150;
 					contentMarginT = 170;
-				}{
-					headerHeight = headerHeight+'px';
+				}else{
+					headerHeight = headerHeight;
 				}
-				$('.header').css('height',headerHeight);
+				$('.header').css('height',headerHeight+'px');
 				$(".content").css('margin-top', contentMarginT+'px');
 				$( "#log" ).html( "<div>headerheight "+headerHeight+"<br>content margin"+contentMarginT+"<br>richting "+scrollDir+"</div>" );
-				
-				
-				
-				
 			});
 		});
 
