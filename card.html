@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>Card by Skippy</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link rel="stylesheet" href="card.css" />
 </head>
@@ -90,9 +91,15 @@
 		// A $( document ).ready() block.
 		$( document ).ready(function() {
 			$( ".content" ).scroll(function() {
-				
-				var headerHeight = $('.header').height() - 1;
-				var contentMarginT = $('.content').css('margin-top').replace("px","") - 1;
+				var contentScroll = $('.content').scrollTop();
+				if(oldContentScroll < contentScroll){
+					scrollLog = 'omhoog';
+				}else{
+					scrollLog = 'omlaag';
+				}
+				var oldContentScroll = contentScroll;
+				var headerHeight = $('.header').height() - 2;
+				var contentMarginT = $('.content').css('margin-top').replace("px","") - 2;
 				if(headerHeight <= 80){
 					headerHeight = 80+'px';
 					contentMarginT = 100;
@@ -101,7 +108,7 @@
 				}
 				$('.header').css('height',headerHeight);
 				$(".content").css('margin-top', contentMarginT+'px');
-				$( "#log" ).html( "<div>headerheight "+headerHeight+"<br>content margin"+contentMarginT+"</div>" );
+				$( "#log" ).html( "<div>headerheight "+headerHeight+"<br>content margin"+contentMarginT+"<br>scrollpos "+contentScroll+" - "+oldContentScroll+"<br>richting "+scrollLog+"</div>" );
 			});
 		});
 
