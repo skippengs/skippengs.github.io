@@ -1,9 +1,66 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-<title>eric</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vibrant.js/1.0.0/Vibrant.min.js"></script>
+<script>
+document.querySelector("img").addEventListener("load", function() { 
+     // do your vibrant stuff here.
+  console.log(img);
+  console.log("test");
+    var vibrant = new Vibrant(img);
+  console.log(vibrant);
+    var swatches = vibrant.swatches()
+    for (var swatch in swatches){
+        if (swatches.hasOwnProperty(swatch) && swatches[swatch]){
+            console.log(swatch, swatches[swatch].getHex());
+        }
+    }
+
+    /*
+     * Results into:
+     * Vibrant #7a4426
+     * Muted #7b9eae
+     * DarkVibrant #348945
+     * DarkMuted #141414
+     * LightVibrant #f3ccb4
+     */
+});
+//});        
+</script>
 </head>
-<body>
-<h1>hoi eric</h1>
-<p>hoi</p>
+<body> 
+
+<div class="card">
+  <div class="image"><img src="https://skippengs.github.io/Asset.jpg" alt="" id="image" crossOrigin="anonymous"/></div>
+
+  <div class="scrubber">
+
+    <div class="ball"></div>
+
+  </div>
+
+  <div class="information">
+
+    <h1>Song name</h1>
+
+    <h2>Artist name</h2>
+
+    <h3>Albumname</h3>
+
+  </div>
+
+  <div class="controls">
+
+    <span class="btn rewind"><i class="zmdi zmdi-fast-rewind"></i></span>
+
+    <span class="btn play"><i class="zmdi zmdi-play zmdi-hc-2x"></i></span>
+
+    <span class="btn forward"><i class="zmdi zmdi-fast-forward"></i></span>
+
+​
+
+  </div>
+
+</div>
 </body>
-</html><div></div>
+</html>
